@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>childOrder</key>
+	<array>
+		<string>prospectus_materials</string>
+	</array>
 	<key>createMarkedFile</key>
 	<false/>
 	<key>sheetClusters</key>
@@ -17,21 +21,6 @@
 		</array>
 		<array>
 			<string>Introduction Plan.md</string>
-		</array>
-		<array>
-			<string>Chapter 1 Plan.md</string>
-		</array>
-		<array>
-			<string>Chapter 2 Plan.md</string>
-		</array>
-		<array>
-			<string>Chapter 3 Plan.md</string>
-		</array>
-		<array>
-			<string>Chapter 4 Plan.md</string>
-		</array>
-		<array>
-			<string>Chapter 5-Conclusion Plan.md</string>
 		</array>
 		<array>
 			<string>ISSUE_TEMPLATE.md</string>
