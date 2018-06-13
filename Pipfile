@@ -1,0 +1,36 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+pandas = "*"
+jupyter = "*"
+spacy = "*"
+sklearn = "*"
+scipy = "*"
+matplotlib = "*"
+gensim = "*"
+ipykernel = "*"
+nltk = "*"
+plotly = "*"
+numpy = "*"
+scikit-learn = "*"
+"ae4764e" = {path = "/Users/zgl3n/Workspace/pyLDAvis", editable = true}
+python-louvain = "*"
+htrc-feature-reader = "*"
+google-cloud = "*"
+altair = "*"
+python-levenshtein = "*"
+distance = "*"
+"rpy2" = "*"
+datasketch = "*"
+networkx = "*"
+bokeh = "*"
+
+
+[dev-packages]
+
