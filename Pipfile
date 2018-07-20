@@ -30,6 +30,7 @@ distance = "*"
 datasketch = "*"
 networkx = "*"
 bokeh = "*"
+htrc = "*"
 
 
 [dev-packages]
