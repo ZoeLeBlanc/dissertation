@@ -1,36 +1,23 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
-
 pandas = "*"
 jupyter = "*"
 spacy = "*"
-sklearn = "*"
-scipy = "*"
+progress = "*"
+htrc-feature-reader = "*"
 matplotlib = "*"
 gensim = "*"
-ipykernel = "*"
+scipy = "*"
+sklearn = "*"
 nltk = "*"
-plotly = "*"
 numpy = "*"
 scikit-learn = "*"
-python-louvain = "*"
-htrc-feature-reader = "*"
-google-cloud = "*"
-altair = "*"
-python-levenshtein = "*"
-distance = "*"
-"rpy2" = "*"
-datasketch = "*"
 networkx = "*"
-bokeh = "*"
-htrc = "*"
-
+beautifulsoup4 = "*"
+requests = "*"
 
 [dev-packages]
-
