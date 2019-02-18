@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 def get_hathi_links(page, file_name):
+    '''This function scrapes volume links from a Hathi Trust record page in case the collection making is not working.'''
     result = requests.get(page)
     ht_page = result.content
     soup = BeautifulSoup(ht_page, 'html.parser')

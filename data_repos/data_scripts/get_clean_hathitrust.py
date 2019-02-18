@@ -24,9 +24,8 @@ def read_collections(metadata, folder):
         a.to_csv(file_name)
         spread_table(title, file_name)
 
-def read_ids(folder):
-    '''This function reads in the metadata of a collection created on Hathi Trust and the folder destination. It gets the volume and tokenlist from Hathi Trust, and then calls spread table which separates out by page all tokens.'''
-    
+def read_ids(folder, metadata):
+    '''This function reads in the list of ids scraped from Hathi Trust and the folder destination. It gets the volume and tokenlist from Hathi Trust, and then calls spread table which separates out by page all tokens.'''
     
     volids = []
     print(volids)
