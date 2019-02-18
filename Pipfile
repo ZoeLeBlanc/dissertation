@@ -19,7 +19,6 @@ nltk = "*"
 plotly = "*"
 numpy = "*"
 scikit-learn = "*"
-"ae4764e" = {path = "/Users/zgl3n/Workspace/pyLDAvis", editable = true}
 python-louvain = "*"
 htrc-feature-reader = "*"
 google-cloud = "*"
