@@ -3,7 +3,7 @@ This directory contains all the datasets for my dissertations. Unfortunately, th
 
 Each directory contains the data from one publication, and then the various transformed datasets I use in my analyses. 
 
-[Cairo Press Review](../cairo_press_review_1962/README.md)
+[Cairo Press Review](./cairo_press_review_1962/README.md)
 ### Data Sets
 
 
