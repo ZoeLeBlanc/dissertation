@@ -35,6 +35,7 @@ def read_ids(metadata, folder, df):
         # volids = [ vol for vol in volids if vol != 'uva.x030697132']
         # idx = volids.index('uva.x030697132') # for '../data_sources/hathi_trust_metadatas/middle_east_news_economic_weekly_1964_1973_008564927.csv' remove volume that is throwing error
         # volids = volids[idx+1:]
+        
         fr = FeatureReader(ids=volids)
         for vol in fr:
             row = md.loc[md['vol_id'] == vol.id].copy()
@@ -100,4 +101,4 @@ def spread_table(title, file_name):
 
 if __name__ ==  "__main__" :
 	# read_collections('../data_sources/hathi_trust_metadatas/EgyptianEconomicandPoliticalReviewMetaData.txt', '../data_sources/Egyptian_Economic_and_Political_Review_HathiTrust/')
-    read_ids('../data_sources/hathi_trust_metadatas/nahdat_ifriqiyah_1962_1964_000063924.csv', '../data_sources/nahdat_ifriqiyah_1962_1964_HathiTrust/', True)
+    read_ids('../data_sources/hathi_trust_metadatas/nashrat_akhbar_jamiat_al-Duwal_al-Arabiyah_1962_1967_003839852.csv', '../data_sources/nashrat_akhbar_jamiat_al-Duwal_al-Arabiyah_1962_1967_HathiTrust/', True)

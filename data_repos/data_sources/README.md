@@ -1,5 +1,7 @@
 # Data Sources
-This directory contains all the datasets I use in my analysis. They are not accessible via Github due to copyright, but I am open to discussing sharing them on a case by case basis. All data is organized by publication and more information about each publication can be found in their respective directories.
+This directory contains all the datasets for my dissertations. Unfortunately, these datasets are not accessible on this Github repository due to copyright restrictions, but I am open to sharing them on a case by case basis. 
+
+Each directory contains the data from one publication, and then the various transformed datasets I use in my analyses. 
 
 ### Data Sets
 
