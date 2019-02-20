@@ -5,6 +5,9 @@ Each directory contains the data from one publication, and then the various tran
 
 ### Data Sets
 
+| Publication | 
+| --- |
+| [Cairo Press Review](./cairo_press_review_1962/README.md) |
 
 1. Arab Review 1960-1963, compiled from Hathi Trust. Find collection here: [https://babel.hathitrust.org/cgi/mb?a=listis;c=381836127](https://babel.hathitrust.org/cgi/mb?a=listis;c=381836127)
 
