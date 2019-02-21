@@ -18,34 +18,34 @@ def write_dataframe(soup, output_path):
     links = soup.find_all(attrs={"data-hdl":True})
 
     for l in links:
-        em = l.find_next_siblings()
-        if 'Indiana' in em[0].get_text():
-            vol_info = l.span.get_text().split(' ')
-            print(vol_info)
-            new_df = {}
-            new_df['volume'] = ('_').join(vol_info[:-1]) 
-            new_df['date'] = vol_info[-1]
-            
-            new_df['vol_id'] = l.get('data-hdl')
-            print(new_df)
-            dl = pd.DataFrame().append(new_df, ignore_index=True)
-            if os.path.exists(output_path):
-                dl.to_csv(output_path, mode='a', header=False, index=False)
-            else:
-                dl.to_csv(output_path, header=True, index=False)
+        # em = l.find_next_siblings()
+        # if 'Indiana' in em[0].get_text():
+        vol_id = l.get('data-hdl')
+        vol_info = l.span.get_text().split(' ')
+        new_df = {}
+        new_df['volume'] = 'na'
+        new_df['date'] = vol_info[0]
+        
+        new_df['vol_id'] = vol_id
+        print(new_df)
+        dl = pd.DataFrame().append(new_df, ignore_index=True)
+        if os.path.exists(output_path):
+            dl.to_csv(output_path, mode='a', header=False, index=False)
+        else:
+            dl.to_csv(output_path, header=True, index=False)
 
 def write_file(soup, file_name):
     f = open(file_name,'w')
     links = soup.find_all(attrs={"data-hdl":True})
-    pd = DataFrame()
+    # pd = DataFrame()
     for l in links:
         vol_id = l.get('data-hdl')
         
-        if vol_id == 'uva.x004015666':
-            break
+        # if vol_id == 'inu.30000093395972':
+        #     break
         f.write(vol_id + '\n')
 
-get_hathi_links('https://catalog.hathitrust.org/Record/003839852', '../data_sources/hathi_trust_metadatas/nashrat_akhbar_jamiat_al-Duwal_al-Arabiyah_1962_1967_003839852.csv', True)
+get_hathi_links('https://catalog.hathitrust.org/Record/008567414', '../data_sources/hathi_trust_metadatas/The_cultural_yearbook_1959_1960_008567414.csv', True)
 
 '''
 For Afro Asian Bulletin
@@ -92,4 +92,24 @@ For MEN News Weekly
 # # if l.get('data-hdl') == 'inu.30000122990637':
         #     # break ##Use this for '../data_sources/hathi_trust_metadatas/middle_east_news_economic_weekly_1964_1973_008564927.csv' -> 'uva.x004015666'
         #     ##Use this for '../data_sources/hathi_trust_metadatas/M.E.N_weekly_review_of_world_and_Arab_affairs.1963_1964_008564926.csv' -> 'inu.30000122990637'
+'''
+
+'''
+La Documentation Arabe
+if vol_id == 'inu.30000093395972':
+            vol_info = l.span.get_text().split(' ')
+            print(vol_info)
+            new_df = {}
+            new_df['volume'] = vol_info[0] 
+            new_df['date'] = vol_info[1]
+            
+            new_df['vol_id'] = vol_id
+            print(new_df)
+        else:
+            new_df = {}
+            new_df['volume'] = 'na'
+            new_df['date'] = '1963'
+            
+            new_df['vol_id'] = vol_id
+            print(new_df)
 '''

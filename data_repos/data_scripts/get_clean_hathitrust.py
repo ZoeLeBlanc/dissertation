@@ -8,6 +8,9 @@ from progress.bar import IncrementalBar
 def read_collections(metadata, folder):
     '''This function reads in the metadata of a collection created on Hathi Trust and the folder destination. It gets the volume and tokenlist from Hathi Trust, and then calls spread table which separates out by page all tokens.'''
 
+    directory = os.path.dirname(folder)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
     md = pd.read_csv(metadata,sep='\t')
     volids = md['htitem_id'].tolist()
     print(volids)
@@ -15,11 +18,14 @@ def read_collections(metadata, folder):
     for vol in fr:
         row = md.loc[md['htitem_id'] == vol.id].copy()
         title = row['title'].values[0]
-        title = title.lower().replace('.', '').replace('&amp;', 'and').replace('/', ' ').replace('-', ' ').split(" ")
-        title = "_".join(title)
-        title= folder+title
+        print(title)
+        # title = title.lower().replace('.', '').replace('&amp;', 'and').replace('/', ' ').replace('-', ' ').split(" ")
+        name = title.lower().split(':')[0].split(' ')
+        dates = "_".join(title.split(' ')[-3:])
+        title= folder+"_".join(name)+dates
+        print(title)
         file_name = title + '.csv'
-        print(file_name, folder)
+        # print(file_name, folder)
         a = vol.tokenlist(pos=False, case=False, section='all')
         a.to_csv(file_name)
         spread_table(title, file_name)
@@ -38,9 +44,11 @@ def read_ids(metadata, folder, df):
         
         fr = FeatureReader(ids=volids)
         for vol in fr:
+            print(vol.title, vol.id, vol.pub_date)
             row = md.loc[md['vol_id'] == vol.id].copy()
-            title = vol.title
-            title = title.lower().split(" ")
+    
+            title = vol.title.lower().split(' ')
+            # title = title.lower().split(" ")
             title = "_".join(title)+'_'+str(row.volume.values[0])+'_'+str(row.date.values[0])
             print(title)
             
@@ -54,23 +62,28 @@ def read_ids(metadata, folder, df):
     else:
         text_file = open(metadata, "r")
         volids = text_file.read().split('\n')
-        volids = [vol for vol in volids if len(vol) > 0]
-        volids = volids[:-1]
-        volids = volids[0:3]
+        # volids = [vol for vol in volids if len(vol) > 0]
+        # volids = volids[:-1]
+        # volids = volids[0:3]
         
         fr = FeatureReader(ids=volids)
-        for vol in fr:
-            title = vol.title + ' ' + vol.pub_date
-            print(vol.metadata)
-            title = title.lower().replace('.', '').replace('&amp;', 'and').replace('/', ' ').replace('-', ' ').split(" ")
-            title = "_".join(title)
-            print(title)
-            title= folder+title
-            file_name = title + '.csv'
-            print(file_name, folder)
-            a = vol.tokenlist(pos=False, case=False, section='all')
-            a.to_csv(file_name)
-            spread_table(title, file_name)
+        print(len(fr))
+        for idx, vol in enumerate(fr):
+            print(idx)
+            if idx == 2:
+                break
+            else:
+                title = vol.title + ' ' + vol.pub_date
+                print(vol.pub_date, vol.title, vol.id)
+            # title = title.lower().replace('.', '').replace('&amp;', 'and').replace('/', ' ').replace('-', ' ').split(" ")
+            # title = "_".join(title)
+            # print(title)
+            # title= folder+title
+            # file_name = title + '.csv'
+            # print(file_name, folder)
+            # a = vol.tokenlist(pos=False, case=False, section='all')
+            # a.to_csv(file_name)
+            # spread_table(title, file_name)
 
 
 def spread_table(title, file_name):
@@ -100,5 +113,5 @@ def spread_table(title, file_name):
     final_df.to_csv(title + '_grouped.csv')
 
 if __name__ ==  "__main__" :
-	# read_collections('../data_sources/hathi_trust_metadatas/EgyptianEconomicandPoliticalReviewMetaData.txt', '../data_sources/Egyptian_Economic_and_Political_Review_HathiTrust/')
-    read_ids('../data_sources/hathi_trust_metadatas/nashrat_akhbar_jamiat_al-Duwal_al-Arabiyah_1962_1967_003839852.csv', '../data_sources/nashrat_akhbar_jamiat_al-Duwal_al-Arabiyah_1962_1967_HathiTrust/', True)
+	read_collections('../data_sources/hathi_trust_metadatas/Cairo_Press_Review_HTRC.txt', '../data_sources/Cairo_Press_Review_1962_HathiTrust/')
+    # read_ids('../data_sources/hathi_trust_metadatas/The_cultural_yearbook_1959_1960_008567414.csv', '../data_sources/The_cultural_yearbook_1959_1960_HathiTrust/', True)
