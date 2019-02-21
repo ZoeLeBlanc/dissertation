@@ -11,7 +11,10 @@ English
 Middle East News Agency and National Publications House
 
 ### Frequency Published
-Weekly
+Daily
+
+### Publication Run
+1961-1994
 
 ### Dates/Volumes Contained
 - April - December 1962 from Hathi Trust
@@ -22,3 +25,13 @@ Weekly
 ### Date Last Compiled
 2019-02-01
 
+### Code Snippets
+`process_hathitrust.py`
+```
+# in get_hathi()
+
+title = ('_').join(hathi_vol.split('_')[0:3])
+dates = ('_').join(hathi_vol.split('_')[3:])
+vols = 'na'
+              
+```

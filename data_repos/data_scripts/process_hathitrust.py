@@ -69,20 +69,16 @@ def get_hathi(directory, output_path):
     for root, dirs, files in os.walk(directory):
         for file in files:
             if 'grouped' in file:
-                print(file, directory)
+                # print(file, directory)
                 df_hathi = pd.read_csv(directory + file)
-
                 hathi_vol = file.split('/')[-1].split('_grouped')[0]
-                title = hathi_vol.split('review')[0]
-                title = title + 'review'
-                dates = hathi_vol.split('review')[1].split('_')[-2:]
-                dates = ('-').join(dates)
-                vols = hathi_vol.split('review')[1].split('_')[:-2]
-                vols = ('_').join(vols)
+                print(hathi_vol)
+                title = ('_').join(hathi_vol.split('_')[0:3])
+                dates = ('_').join(hathi_vol.split('_')[3:])
+                vols = 'na'
                 print(hathi_vol, title, dates, vols)
                 data = process_text(df_hathi, title, dates, vols)
                 data = data.drop(['Unnamed: 0'], axis=1)
-                # print(data)
                 if os.path.exists(output_path):
                     data.to_csv(output_path, mode='a', header=False, index=False)
                 else:
@@ -90,4 +86,5 @@ def get_hathi(directory, output_path):
  
 
 if __name__ ==  "__main__" :
-    get_hathi('../data_sources/Egyptian_Economic_and_Political_Review_HathiTrust/', '../data_sources/Egyptian_Economic_and_Political_Review_HathiTrust/the_egyptian_economic_and_political_review_all_volumes_processed.csv')
+    get_hathi('../data_sources/Cairo_Press_Review_1962_HathiTrust/', '../data_sources/Cairo_Press_Review_1962_HathiTrust/Cairo_Press_Review_1962_volumes_processed.csv')
+    
