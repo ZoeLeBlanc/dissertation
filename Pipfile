@@ -19,5 +19,9 @@ scikit-learn = "*"
 networkx = "*"
 beautifulsoup4 = "*"
 requests = "*"
+altair = "*"
+notebook = "*"
+vega = "*"
+seaborn = "*"
 
 [dev-packages]
