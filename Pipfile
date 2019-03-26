@@ -23,5 +23,8 @@ altair = "*"
 notebook = "*"
 vega = "*"
 seaborn = "*"
+cfscrape = "*"
+lxml = "*"
+google-cloud-translate = "*"
 
 [dev-packages]

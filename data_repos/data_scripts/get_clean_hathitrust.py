@@ -44,16 +44,19 @@ def read_ids(metadata, folder, df):
         
         fr = FeatureReader(ids=volids)
         for vol in fr:
-            print(vol.title, vol.id, vol.pub_date)
+            # print(vol.title, vol.id, vol.pub_date)
             row = md.loc[md['vol_id'] == vol.id].copy()
-    
+            # print(row, vol.title)
             title = vol.title.lower().split(' ')
-            # title = title.lower().split(" ")
+            # # title = title.lower().split(" ")
             title = "_".join(title)+'_'+str(row.volume.values[0])+'_'+str(row.date.values[0])
+            # title = 'tricontinental_bulletin_'+str(row.volume.values[0])+'_'+str(row.date.values[0])
+            
             print(title)
             
             title= folder+title
             file_name = title + '.csv'
+            print(file_name)
             a = vol.tokenlist(pos=False, case=False, section='all')
 
             file_name = file_name
@@ -113,5 +116,9 @@ def spread_table(title, file_name):
     final_df.to_csv(title + '_grouped.csv')
 
 if __name__ ==  "__main__" :
-	read_collections('../data_sources/hathi_trust_metadatas/Cairo_Press_Review_HTRC.txt', '../data_sources/Cairo_Press_Review_1962_HathiTrust/')
-    # read_ids('../data_sources/hathi_trust_metadatas/The_cultural_yearbook_1959_1960_008567414.csv', '../data_sources/The_cultural_yearbook_1959_1960_HathiTrust/', True)
+	# read_collections('../data_sources/hathi_trust_metadatas/Cairo_Press_Review_HTRC.txt', '../data_sources/Cairo_Press_Review_1962_HathiTrust/')
+    read_ids('../data_sources/hathi_trust_metadatas/arab_affairs_000679914.csv', '../data_sources/arab_affairs_1960_1962_HathiTrust/', True)
+
+    #african association review '../data_sources/hathi_trust_metadatas/african_association_review_1963_06064525.csv'
+
+    

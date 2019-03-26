@@ -29,39 +29,38 @@ def process_text(df, title, dates, vols):
         row['dates'] = dates
         row['vols'] = vols
 
-        row['tokenized_text'] = ''
-        row['spacy_text'] = ''
-        row['tokenized_counts'] = 0
-        row['spacy_counts'] = 0
         tokens = custom_tokenize(raw_text)
+        row['original_text'] = raw_text
+        row['cleaned_nltk_text'] = ''
+        row['cleaned_spacy_text'] = ''
+        row['original_counts'] = len(row.lowercase.split())
+        row['cleaned_nltk_counts'] = 0
+        row['cleaned_spacy_counts'] = 0
         page_terms = ''
         for t in tokens:
-            if t in string.punctuation:
+            if t.lower() in string.punctuation:
                 continue
-            elif t in stopwords.words('english'):
-                continue
-                
-            elif t.isdigit():
+            elif t.lower() in stopwords.words('english'):
                 continue
             else:
                 page_terms += t.lower() + ' '
-        row.tokenized_text = page_terms
-        sent_terms = ''
+        row.cleaned_nltk_text = page_terms
+        spacy_terms = ''
         spacy_text = nlp(page_terms)
         for ent in spacy_text:
             if len(ent.ent_type_) > 0 or ent.is_alpha:
-                if ent.is_punct == False:
+                if( ent.is_punct == False) and (any(i.isdigit() for i in ent.text) == False) and (ent.is_stop ==False):
                     if '.' in ent.text:
                         text = ('').join(ent.text.split('.'))
-                        sent_terms += text + ' '
+                        spacy_terms += text + ' '
                     else:
-                        sent_terms += ent.text + ' '
-        row.spacy_text = sent_terms
+                        spacy_terms += ent.text + ' '
+        row.cleaned_spacy_text = spacy_terms
         df_1 = df_1.append(row, ignore_index=True)    
     df_1.reset_index(inplace=True)
     processing.finish()
-    df_1.tokenized_counts = df_1.tokenized_text.str.split().str.len()
-    df_1.spacy_counts = df_1.spacy_text.str.split().str.len()
+    df_1.cleaned_nltk_counts = df_1.cleaned_nltk_text.str.split().str.len()
+    df_1.cleaned_spacy_counts = df_1.cleaned_spacy_text.str.split().str.len()
     return df_1
 
 
@@ -72,10 +71,13 @@ def get_hathi(directory, output_path):
                 # print(file, directory)
                 df_hathi = pd.read_csv(directory + file)
                 hathi_vol = file.split('/')[-1].split('_grouped')[0]
-                print(hathi_vol)
-                title = ('_').join(hathi_vol.split('_')[0:3])
-                dates = ('_').join(hathi_vol.split('_')[3:])
-                vols = 'na'
+                print(hathi_vol.split('_'))
+                title = ('_').join(hathi_vol.split('_')[:-2])
+                dates = hathi_vol.split('_')[-1]
+                vols = hathi_vol.split('_')[-2]
+                # if len(hathi_vol.split('_')) >3:
+                #     vols = ('_').join(hathi_vol.split('_')[1:3])
+                # # vols = 'na'
                 print(hathi_vol, title, dates, vols)
                 data = process_text(df_hathi, title, dates, vols)
                 data = data.drop(['Unnamed: 0'], axis=1)
@@ -86,5 +88,5 @@ def get_hathi(directory, output_path):
  
 
 if __name__ ==  "__main__" :
-    get_hathi('../data_sources/Cairo_Press_Review_1962_HathiTrust/', '../data_sources/Cairo_Press_Review_1962_HathiTrust/Cairo_Press_Review_1962_volumes_processed.csv')
+    get_hathi('../data_sources/arab_affairs_1960_1962_HathiTrust/', '../data_sources/arab_affairs_1960_1962_HathiTrust/arab_affairs_1960_1962_volumes_processed.csv')
     

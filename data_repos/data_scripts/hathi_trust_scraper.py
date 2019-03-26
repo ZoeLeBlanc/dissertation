@@ -18,21 +18,25 @@ def write_dataframe(soup, output_path):
     links = soup.find_all(attrs={"data-hdl":True})
 
     for l in links:
-        # em = l.find_next_siblings()
-        # if 'Indiana' in em[0].get_text():
-        vol_id = l.get('data-hdl')
-        vol_info = l.span.get_text().split(' ')
-        new_df = {}
-        new_df['volume'] = 'na'
-        new_df['date'] = vol_info[0]
+        em = l.find_next_siblings()
+        if 'Indiana' in em[0].get_text():
         
-        new_df['vol_id'] = vol_id
-        print(new_df)
-        dl = pd.DataFrame().append(new_df, ignore_index=True)
-        if os.path.exists(output_path):
-            dl.to_csv(output_path, mode='a', header=False, index=False)
-        else:
-            dl.to_csv(output_path, header=True, index=False)
+            vol_id = l.get('data-hdl')
+            vol_info = l.span.get_text().split(' ')
+            new_df = {}
+            new_df['volume'] = vol_info[0]
+            # new_df['date'] = vol_info[1]
+            new_df['date'] = '1960_1962'
+            # # if len(vol_info) > 2:
+            # #     new_df['volume'] = vol_info[0] + '_' +vol_info[1]
+            
+            new_df['vol_id'] = vol_id
+            print(vol_info)
+            dl = pd.DataFrame().append(new_df, ignore_index=True)
+            if os.path.exists(output_path):
+                dl.to_csv(output_path, mode='a', header=False, index=False)
+            else:
+                dl.to_csv(output_path, header=True, index=False)
 
 def write_file(soup, file_name):
     f = open(file_name,'w')
@@ -45,7 +49,7 @@ def write_file(soup, file_name):
         #     break
         f.write(vol_id + '\n')
 
-get_hathi_links('https://catalog.hathitrust.org/Record/008567414', '../data_sources/hathi_trust_metadatas/The_cultural_yearbook_1959_1960_008567414.csv', True)
+get_hathi_links('https://catalog.hathitrust.org/Record/000679914', '../data_sources/hathi_trust_metadatas/arab_affairs_000679914.csv', True)
 
 '''
 For Afro Asian Bulletin
