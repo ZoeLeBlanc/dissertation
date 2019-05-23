@@ -88,5 +88,5 @@ def get_hathi(directory, output_path):
  
 
 if __name__ ==  "__main__" :
-    get_hathi('../data_sources/arab_affairs_1960_1962_HathiTrust/', '../data_sources/arab_affairs_1960_1962_HathiTrust/arab_affairs_1960_1962_volumes_processed.csv')
+    get_hathi('../data_sources/the_scribe_1961_1965_HathiTrust/', '../data_sources/the_scribe_1961_1965_HathiTrust/the_scribe_1961_1965_volumes_processed.csv')
     

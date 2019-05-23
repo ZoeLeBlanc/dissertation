@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<style>
+
+.links line {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
+.nodes circle {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+text {
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+#graph {
+    width: 99vw;
+    height: 99vh;
+}
+
+</style>
+<svg id="graph"></svg>
+<script>
+
+var width = $(window).width();
+var height = $(window).height();
+
+var svg = d3.select("svg")
+    .attr("height", height)
+    .attr("width", width);
+function normalize(val, max=15, min=5){ return min + (max-min) *val}
+var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+var simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(function(d) {
+        return d.id; }))
+    	.force('charge',
+                d3.forceManyBody().strength(-200)
+            )
+    .force("center", d3.forceCenter(width / 2, height / 2))
+  	.force('y', d3.forceY(0))
+    .force('x', d3.forceX(0));
+
+var graph = {
+  "nodes": [
+    {
+      "label": "Re-Orientation: The Chinese Azharites between Umma and Third World, 1938-55",
+      "id": "4201475383961567421",
+      "url": "https://read.dukeupress.edu/cssaame/article-abstract/34/1/24/59816",
+      "title": "Re-Orientation: The Chinese Azharites between Umma and Third World, 1938-55",
+      "authors": "JT Chen",
+      "year": "2014",
+      "cited_by": 9,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=4201475383961567421&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.2903225806451613
+    },
+    {
+      "label": "The Philosophy of the Revolution",
+      "id": "18384710366382244445",
+      "title": "The Philosophy of the Revolution",
+      "value": 0.543859649122807
+    },
+    {
+      "label": "Interpreting Islam in China: Pilgrimage, Scripture, and Language in the Han Kitab",
+      "id": "2681096123505496750",
+      "url": "https://books.google.com/books?hl=en&lr=&id=L3QzDwAAQBAJ&oi=fnd&pg=PT9&ots=vv-EDah3pi&sig=9BiHs6VrRm7F88hJM6No55TAzKs",
+      "title": "Interpreting Islam in China: Pilgrimage, Scripture, and Language in the Han Kitab",
+      "authors": "K Petersen",
+      "year": "2017",
+      "cited_by": 10,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=2681096123505496750&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.0
+    },
+    {
+      "label": "The Muslim Reception of European Orientalism: Reversing the Gaze",
+      "id": "2542091724148204021",
+      "url": "https://books.google.com/books?hl=en&lr=&id=2Kp-DwAAQBAJ&oi=fnd&pg=PT10&ots=lvSBq3fFG9&sig=5fuKCyypWNdkfa1Dt5fzeVT7p6Y",
+      "title": "The Muslim Reception of European Orientalism: Reversing the Gaze",
+      "authors": "S Heschel, U Ryad",
+      "year": "2018",
+      "cited_by": 2,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=2542091724148204021&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.0
+    },
+    {
+      "label": "Chinese Muslims in Transregional Spaces of Mainland China, Taiwan, and Beyond in the Twentieth Century",
+      "id": "2584397646818281716",
+      "url": "https://brill.com/view/journals/rrcs/5/2/article-p135_135.xml",
+      "title": "Chinese Muslims in Transregional Spaces of Mainland China, Taiwan, and Beyond in the Twentieth Century",
+      "authors": "W Cieciura",
+      "year": "2018",
+      "cited_by": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=2584397646818281716&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.0
+    },
+    {
+      "label": "Chinese Students of Al-Azhar and their impact on Sino-Egyptian Relations",
+      "id": "2bTlJuDkNq0J",
+      "url": "https://www.arabwestreport.info/sites/default/files/Paper64_Gajan%20-%20Chinese%20Students%20of%20Al-Azhar.pdf",
+      "title": "Chinese Students of Al-Azhar and their impact on Sino-Egyptian Relations",
+      "authors": "M Gajan, SG Stacey",
+      "year": "arabwestreport.info",
+      "value": 0.0
+    },
+    {
+      "label": "\u201cPeople are God\u201d Third World Internationalism and Chinese Muslims in the Making of the National Recognition in the 1950s",
+      "id": "VZcXa_7tQ4UJ",
+      "url": "http://dergipark.gov.tr/iusosyoloji/issue/44152/544609",
+      "title": "\u201cPeople are God\u201d Third World Internationalism and Chinese Muslims in the Making of the National Recognition in the 1950s",
+      "authors": "Y Zhiguang",
+      "year": "\u0130stanbul \u00dcniversitesi Sosyoloji Dergisi",
+      "value": 0.0
+    },
+    {
+      "label": "Chinese Students of Al-Azhar",
+      "id": "2VOAmdJ8ankJ",
+      "url": "https://www.arabwestreport.info/sites/default/files/Gajan%20-%20Chinese%20Students%20of%20Al-Azhar.pdf",
+      "title": "Chinese Students of Al-Azhar",
+      "authors": "M Gajan",
+      "year": "arabwestreport.info",
+      "value": 0.0
+    },
+    {
+      "label": "Islam's Loneliest Cosmopolitan: Badr Al-Din Hai Weiliang, the Lucknow\u2013Cairo Connection, and the Circumscription of Islamic Transnationalism",
+      "id": "8167826132191765360",
+      "url": "https://www.jstor.org/stable/10.13169/reorient.3.2.0120",
+      "title": "Islam's Loneliest Cosmopolitan: Badr Al-Din Hai Weiliang, the Lucknow\u2013Cairo Connection, and the Circumscription of Islamic Transnationalism",
+      "authors": "J Chen",
+      "year": "2018",
+      "value": 0.0
+    },
+    {
+      "label": "6 The frustrating authority of Mr. Wells",
+      "id": "CxSArhPa6REJ",
+      "url": "https://lirias2repo.kuleuven.be/bitstream/id/526879/#page=143",
+      "title": "6 The frustrating authority of Mr. Wells",
+      "authors": "AN Glasserman",
+      "year": "The Muslim Reception of European Orientalism",
+      "value": 0.0
+    },
+    {
+      "label": "The conundrum of collaboration: Japanese involvement with Muslims in North China, 1931-1945",
+      "id": "1152223864380026508",
+      "url": "https://repository.library.georgetown.edu/handle/10822/761496",
+      "title": "The conundrum of collaboration: Japanese involvement with Muslims in North China, 1931-1945",
+      "authors": "KA Hammond",
+      "year": "2015",
+      "value": 0.0
+    },
+    {
+      "label": "Al-Nakbah in Arab thought: The transformation of a concept",
+      "id": "4959556222819133147",
+      "url": "https://read.dukeupress.edu/cssaame/article-abstract/35/3/622/59951",
+      "title": "Al-Nakbah in Arab thought: The transformation of a concept",
+      "authors": "A Al-Hardan",
+      "year": "2015",
+      "cited_by": 7,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=4959556222819133147&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.22580645161290322
+    },
+    {
+      "label": "Ritualistic Remembrance-Films and TV-series about resistance during World War Two and the construction of Norwegian identity",
+      "id": "3A-HBrOVQ2MJ",
+      "url": "https://www.duo.uio.no/handle/10852/57654",
+      "title": "Ritualistic Remembrance-Films and TV-series about resistance during World War Two and the construction of Norwegian identity",
+      "authors": "HR Markussen",
+      "year": "2017",
+      "value": 0.0
+    },
+    {
+      "label": "17 The Intellectuals and the Revolution in Syria",
+      "id": "11304400861131265660",
+      "url": "https://books.google.com/books?hl=en&lr=&id=AgRGDwAAQBAJ&oi=fnd&pg=PA374&ots=QK4PLbt7NN&sig=BxGdrNM9FIVSk4EjGHBbJYiVAm8",
+      "title": "17 The Intellectuals and the Revolution in Syria",
+      "authors": "YH Saleh",
+      "year": "2018",
+      "value": 0.0
+    },
+    {
+      "label": "Remembering Past (s), Imagining Futures: The Politics of Hope in Palestine",
+      "id": "16933788503292780428",
+      "url": "https://tspace.library.utoronto.ca/handle/1807/92662",
+      "title": "Remembering Past (s), Imagining Futures: The Politics of Hope in Palestine",
+      "authors": "NT Shaindlinger",
+      "year": "2016",
+      "value": 0.0
+    },
+    {
+      "label": "Speaking Back to a World of Checkpoints: Oral History as a Decolonizing Tool in the Study of Palestinian Refugees from Syria in Lebanon",
+      "id": "4UrF7rvf08QJ",
+      "url": "https://lra.le.ac.uk/handle/2381/40429",
+      "title": "Speaking Back to a World of Checkpoints: Oral History as a Decolonizing Tool in the Study of Palestinian Refugees from Syria in Lebanon",
+      "authors": "ME Lundsfryd",
+      "year": "2017",
+      "value": 0.0
+    },
+    {
+      "label": "Memories for the Return? Remembering the Nakba by the First Generation of Palestinian Refugees in Syria",
+      "id": "15718373692146680082",
+      "url": "https://www.euppublishing.com/doi/abs/10.3366/hlps.2017.0164",
+      "title": "Memories for the Return? Remembering the Nakba by the First Generation of Palestinian Refugees in Syria",
+      "authors": "A Al-Hardan",
+      "year": "2017",
+      "value": 0.0
+    },
+    {
+      "label": "LUCAS DE JESUS SANTOS",
+      "id": "BHx2oo7nzCgJ",
+      "url": "http://taurus.unicamp.br/bitstream/REPOSIP/321597/1/Santos_LucasdeJesus_M.pdf",
+      "title": "LUCAS DE JESUS SANTOS",
+      "authors": "EW SAID",
+      "year": "taurus.unicamp.br",
+      "value": 0.0
+    },
+    {
+      "label": "Retorno \u00e0 filologia e humanismo em Edward W. Said",
+      "id": "a3jspkYW68EJ",
+      "url": "http://repositorio.unicamp.br/handle/REPOSIP/321597",
+      "title": "Retorno \u00e0 filologia e humanismo em Edward W. Said",
+      "authors": "LJ Santos",
+      "year": "2016",
+      "value": 0.0
+    },
+    {
+      "label": "A political history of national liberation movement in Asia and Africa, 1914-1985",
+      "id": "17565536014075811145",
+      "title": "A political history of national liberation movement in Asia and Africa, 1914-1985",
+      "authors": "A Balogh, Z Imam",
+      "year": "1988",
+      "cited_by": 4,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=17565536014075811145&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.12903225806451613
+    },
+    {
+      "label": "Making development geography",
+      "id": "6559324546197513541",
+      "url": "https://www.taylorfrancis.com/books/9781444116731",
+      "title": "Making development geography",
+      "authors": "V Lawson",
+      "year": "2014",
+      "cited_by": 145,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=6559324546197513541&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.0
+    },
+    {
+      "label": "Concepts of Cabralism: Amilcar Cabral and Africana Critical Theory",
+      "id": "10718160787550692095",
+      "url": "https://books.google.com/books?hl=en&lr=&id=EgsWBAAAQBAJ&oi=fnd&pg=PR7&ots=1EEo_G9B1H&sig=cYyw5jwjX5NR5aP0XOtIIAuKeY8",
+      "title": "Concepts of Cabralism: Amilcar Cabral and Africana Critical Theory",
+      "authors": "R Rabaka",
+      "year": "2014",
+      "cited_by": 19,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=10718160787550692095&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.0
+    },
+    {
+      "label": "The geopolitics of cultural difference: Locating the spatial poetics of Ezra Pound, HD, and Langston Hughes",
+      "id": "cET-rzn_rTwJ",
+      "url": "http://search.proquest.com/openview/2fc34ae8e60a4d2dc0601fe8fc7f102b/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "title": "The geopolitics of cultural difference: Locating the spatial poetics of Ezra Pound, HD, and Langston Hughes",
+      "authors": "R Walsh",
+      "year": "2004",
+      "value": 0.0
+    },
+    {
+      "label": "[CITATION][C]",
+      "id": "ifky70iqBjIJ",
+      "title": "[CITATION][C]",
+      "authors": "K DAS",
+      "year": "1931",
+      "value": 0.0
+    },
+    {
+      "label": "Rewolucja pod piramidami",
+      "id": "5297561570786145029",
+      "title": "Rewolucja pod piramidami",
+      "authors": "K Sidor",
+      "year": "1969",
+      "cited_by": 6,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=5297561570786145029&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.1935483870967742
+    },
+    {
+      "label": "[CITATION][C]",
+      "id": "8814202659813705392",
+      "title": "[CITATION][C]",
+      "authors": "J Zdanowski",
+      "year": "1986",
+      "cited_by": 30,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=8814202659813705392&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.0
+    },
+    {
+      "label": "[CITATION][C]",
+      "id": "16045244155787947158",
+      "title": "[CITATION][C]",
+      "authors": "E W\u00f3jcik",
+      "year": "1975",
+      "cited_by": 9,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16045244155787947158&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.0
+    },
+    {
+      "label": "[CITATION][C]",
+      "id": "15625078019098713347",
+      "title": "[CITATION][C]",
+      "authors": "HA Jamsheer",
+      "year": "1987",
+      "cited_by": 8,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=15625078019098713347&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.0
+    },
+    {
+      "label": "Political Cleavages in Jordan: In the Light of the General Election Held in 1956",
+      "id": "4329802764567512323",
+      "url": "http://cejsh.icm.edu.pl/cejsh/element/bwmeta1.element.desklight-8961d413-93bf-49c2-ada2-783d34c7510c/c/Bartosz_Wroblewski_-_ang.pdf",
+      "title": "Political Cleavages in Jordan: In the Light of the General Election Held in 1956",
+      "authors": "B Wr\u00f3blewski",
+      "year": "2008",
+      "cited_by": 2,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=4329802764567512323&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.0
+    },
+    {
+      "label": "FUNDAMENTALIZM MUZU\u0141MA\u0143SKI NA PRZYK\u0141ADZIE DZIA\u0141ALNO\u015aCI BRACI MUZU\u0141MAN\u00d3W W EGIPCIE I JORDANII",
+      "id": "35307202442654876",
+      "url": "https://www.ceeol.com/search/article-detail?id=414118",
+      "title": "FUNDAMENTALIZM MUZU\u0141MA\u0143SKI NA PRZYK\u0141ADZIE DZIA\u0141ALNO\u015aCI BRACI MUZU\u0141MAN\u00d3W W EGIPCIE I JORDANII",
+      "authors": "B Wr\u00f3blewski",
+      "year": "2009",
+      "cited_by": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=35307202442654876&as_sdt=20000005&sciodt=0,21&hl=en&scioq=Falsafat+Al-Thawrah",
+      "value": 0.0
+    },
+    {
+      "label": "Z BADA\u0143 NAD PODZIA\u0141AMI POLITYCZNYMI W JORDANII W \u015aWIETLE WYBOR\u00d3W POWSZECHNYCH W ROKU 1956",
+      "id": "15881603866752996761",
+      "url": "https://www.ceeol.com/search/article-detail?id=417291",
+      "title": "Z BADA\u0143 NAD PODZIA\u0141AMI POLITYCZNYMI W JORDANII W \u015aWIETLE WYBOR\u00d3W POWSZECHNYCH W ROKU 1956",
+      "authors": "B Wr\u00f3blewski",
+      "year": "2008",
+      "value": 0.0
+    },
+    {
+      "label": "[CITATION][C]",
+      "id": "Wv_ivpFW1LoJ",
+      "title": "[CITATION][C]",
+      "authors": "C Panella",
+      "year": "2003",
+      "value": 0.0
+    }
+  ],
+  "links": [
+    {
+      "source": "4201475383961567421",
+      "target": "18384710366382244445"
+    },
+    {
+      "source": "2681096123505496750",
+      "target": "4201475383961567421"
+    },
+    {
+      "source": "2542091724148204021",
+      "target": "4201475383961567421"
+    },
+    {
+      "source": "2584397646818281716",
+      "target": "4201475383961567421"
+    },
+    {
+      "source": "2bTlJuDkNq0J",
+      "target": "4201475383961567421"
+    },
+    {
+      "source": "VZcXa_7tQ4UJ",
+      "target": "4201475383961567421"
+    },
+    {
+      "source": "2VOAmdJ8ankJ",
+      "target": "4201475383961567421"
+    },
+    {
+      "source": "8167826132191765360",
+      "target": "4201475383961567421"
+    },
+    {
+      "source": "CxSArhPa6REJ",
+      "target": "4201475383961567421"
+    },
+    {
+      "source": "1152223864380026508",
+      "target": "4201475383961567421"
+    },
+    {
+      "source": "4959556222819133147",
+      "target": "18384710366382244445"
+    },
+    {
+      "source": "3A-HBrOVQ2MJ",
+      "target": "4959556222819133147"
+    },
+    {
+      "source": "11304400861131265660",
+      "target": "4959556222819133147"
+    },
+    {
+      "source": "16933788503292780428",
+      "target": "4959556222819133147"
+    },
+    {
+      "source": "4UrF7rvf08QJ",
+      "target": "4959556222819133147"
+    },
+    {
+      "source": "15718373692146680082",
+      "target": "4959556222819133147"
+    },
+    {
+      "source": "BHx2oo7nzCgJ",
+      "target": "4959556222819133147"
+    },
+    {
+      "source": "a3jspkYW68EJ",
+      "target": "4959556222819133147"
+    },
+    {
+      "source": "17565536014075811145",
+      "target": "18384710366382244445"
+    },
+    {
+      "source": "6559324546197513541",
+      "target": "17565536014075811145"
+    },
+    {
+      "source": "10718160787550692095",
+      "target": "17565536014075811145"
+    },
+    {
+      "source": "cET-rzn_rTwJ",
+      "target": "17565536014075811145"
+    },
+    {
+      "source": "ifky70iqBjIJ",
+      "target": "17565536014075811145"
+    },
+    {
+      "source": "5297561570786145029",
+      "target": "18384710366382244445"
+    },
+    {
+      "source": "8814202659813705392",
+      "target": "5297561570786145029"
+    },
+    {
+      "source": "16045244155787947158",
+      "target": "5297561570786145029"
+    },
+    {
+      "source": "15625078019098713347",
+      "target": "5297561570786145029"
+    },
+    {
+      "source": "4329802764567512323",
+      "target": "5297561570786145029"
+    },
+    {
+      "source": "35307202442654876",
+      "target": "5297561570786145029"
+    },
+    {
+      "source": "15881603866752996761",
+      "target": "5297561570786145029"
+    },
+    {
+      "source": "Wv_ivpFW1LoJ",
+      "target": "18384710366382244445"
+    }
+  ]
+};
+
+var link = svg.append("g")
+    .attr("class", "links")
+  .selectAll("line")
+  .data(graph.links)
+  .enter().append("line")
+  .attr("stroke-width", 2);;
+
+var node = svg.append("g")
+      .attr("class", "nodes")
+    .selectAll("g")
+    .data(graph.nodes)
+    .enter().append("g")
+    
+var circles = node.append("circle")
+    .attr("r", function(d){return normalize(d.value)})
+    .attr("fill", '#aec7e8')
+    .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+
+var lables = node.append("text")
+    .text(function(d) {
+            return d.value >0 ? (d.authors ? d.title + ' - ' + d.authors : d.title) : '';
+    })
+    .attr('x', 6)
+    .attr('y', 3);
+
+node.append("title")
+    .text(function(d) { return d.value >0 ? (d.authors ? d.title + ' - ' + d.authors : d.title) : ''; });
+
+simulation
+    .nodes(graph.nodes)
+    .on("tick", ticked);
+
+simulation.force("link")
+    .links(graph.links);
+
+
+
+function ticked() {
+  link
+      .attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+
+  node
+      .attr("transform", function(d) {
+          return "translate(" + d.x + "," + d.y + ")";
+        });
+}
+
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+
+</script>

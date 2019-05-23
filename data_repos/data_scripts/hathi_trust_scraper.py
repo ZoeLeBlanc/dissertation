@@ -25,8 +25,8 @@ def write_dataframe(soup, output_path):
             vol_info = l.span.get_text().split(' ')
             new_df = {}
             new_df['volume'] = vol_info[0]
-            # new_df['date'] = vol_info[1]
-            new_df['date'] = '1960_1962'
+            new_df['date'] = vol_info[1]
+            # new_df['date'] = '1960_1962'
             # # if len(vol_info) > 2:
             # #     new_df['volume'] = vol_info[0] + '_' +vol_info[1]
             
@@ -49,7 +49,7 @@ def write_file(soup, file_name):
         #     break
         f.write(vol_id + '\n')
 
-get_hathi_links('https://catalog.hathitrust.org/Record/000679914', '../data_sources/hathi_trust_metadatas/arab_affairs_000679914.csv', True)
+get_hathi_links('https://catalog.hathitrust.org/Record/000507426', '../data_sources/hathi_trust_metadatas/the_scribe_000507426.csv', True)
 
 '''
 For Afro Asian Bulletin

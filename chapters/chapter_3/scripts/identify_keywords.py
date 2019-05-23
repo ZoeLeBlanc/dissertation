@@ -43,5 +43,5 @@ def get_pages(input_file, output_path, terms):
 
 if __name__ ==  "__main__" :
     terms = ['congo']
-    get_pages('../data/Egyptian_Economic_and_Political_Review_1954_1962_volumes_processed.csv', '../data/Egyptian_Economic_and_Political_Review_1954_1962_congo_corpus.csv', terms)
+    get_pages('../data/Arab_Review_1960_1963_volumes_processed.csv', '../data/Arab_Review_1960_1963_congo_corpus.csv', terms)
    

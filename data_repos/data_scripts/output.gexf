@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf version="1.2" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance">
+  <graph defaultedgetype="directed" mode="static" name="">
+    <attributes class="node" mode="static">
+      <attribute id="0" title="url" type="string" />
+      <attribute id="1" title="title" type="string" />
+      <attribute id="2" title="authors" type="string" />
+      <attribute id="3" title="year" type="string" />
+      <attribute id="4" title="cited_by" type="long" />
+      <attribute id="5" title="cited_by_url" type="string" />
+    </attributes>
+    <meta>
+      <creator>NetworkX 2.3</creator>
+      <lastmodified>20/05/2019</lastmodified>
+    </meta>
+    <nodes>
+      <node id="4201475383961567421" label="Re-Orientation: The Chinese Azharites between Umma and Third World, 1938-55">
+        <attvalues>
+          <attvalue for="0" value="https://read.dukeupress.edu/cssaame/article-abstract/34/1/24/59816" />
+          <attvalue for="1" value="Re-Orientation: The Chinese Azharites between Umma and Third World, 1938-55" />
+          <attvalue for="2" value="JT Chen" />
+          <attvalue for="3" value="2014" />
+          <attvalue for="4" value="9" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=4201475383961567421&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="18384710366382244445" label="The Philosophy of the Revolution">
+        <attvalues>
+          <attvalue for="1" value="The Philosophy of the Revolution" />
+        </attvalues>
+      </node>
+      <node id="2681096123505496750" label="Interpreting Islam in China: Pilgrimage, Scripture, and Language in the Han Kitab">
+        <attvalues>
+          <attvalue for="0" value="https://books.google.com/books?hl=en&amp;lr=&amp;id=L3QzDwAAQBAJ&amp;oi=fnd&amp;pg=PT9&amp;ots=vv-EDah3pi&amp;sig=9BiHs6VrRm7F88hJM6No55TAzKs" />
+          <attvalue for="1" value="Interpreting Islam in China: Pilgrimage, Scripture, and Language in the Han Kitab" />
+          <attvalue for="2" value="K Petersen" />
+          <attvalue for="3" value="2017" />
+          <attvalue for="4" value="10" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=2681096123505496750&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="2542091724148204021" label="The Muslim Reception of European Orientalism: Reversing the Gaze">
+        <attvalues>
+          <attvalue for="0" value="https://books.google.com/books?hl=en&amp;lr=&amp;id=2Kp-DwAAQBAJ&amp;oi=fnd&amp;pg=PT10&amp;ots=lvSBq3fFG9&amp;sig=5fuKCyypWNdkfa1Dt5fzeVT7p6Y" />
+          <attvalue for="1" value="The Muslim Reception of European Orientalism: Reversing the Gaze" />
+          <attvalue for="2" value="S Heschel, U Ryad" />
+          <attvalue for="3" value="2018" />
+          <attvalue for="4" value="2" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=2542091724148204021&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="2584397646818281716" label="Chinese Muslims in Transregional Spaces of Mainland China, Taiwan, and Beyond in the Twentieth Century">
+        <attvalues>
+          <attvalue for="0" value="https://brill.com/view/journals/rrcs/5/2/article-p135_135.xml" />
+          <attvalue for="1" value="Chinese Muslims in Transregional Spaces of Mainland China, Taiwan, and Beyond in the Twentieth Century" />
+          <attvalue for="2" value="W Cieciura" />
+          <attvalue for="3" value="2018" />
+          <attvalue for="4" value="1" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=2584397646818281716&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="2bTlJuDkNq0J" label="Chinese Students of Al-Azhar and their impact on Sino-Egyptian Relations">
+        <attvalues>
+          <attvalue for="0" value="https://www.arabwestreport.info/sites/default/files/Paper64_Gajan%20-%20Chinese%20Students%20of%20Al-Azhar.pdf" />
+          <attvalue for="1" value="Chinese Students of Al-Azhar and their impact on Sino-Egyptian Relations" />
+          <attvalue for="2" value="M Gajan, SG Stacey" />
+          <attvalue for="3" value="arabwestreport.info" />
+        </attvalues>
+      </node>
+      <node id="VZcXa_7tQ4UJ" label="“People are God” Third World Internationalism and Chinese Muslims in the Making of the National Recognition in the 1950s">
+        <attvalues>
+          <attvalue for="0" value="http://dergipark.gov.tr/iusosyoloji/issue/44152/544609" />
+          <attvalue for="1" value="“People are God” Third World Internationalism and Chinese Muslims in the Making of the National Recognition in the 1950s" />
+          <attvalue for="2" value="Y Zhiguang" />
+          <attvalue for="3" value="İstanbul Üniversitesi Sosyoloji Dergisi" />
+        </attvalues>
+      </node>
+      <node id="2VOAmdJ8ankJ" label="Chinese Students of Al-Azhar">
+        <attvalues>
+          <attvalue for="0" value="https://www.arabwestreport.info/sites/default/files/Gajan%20-%20Chinese%20Students%20of%20Al-Azhar.pdf" />
+          <attvalue for="1" value="Chinese Students of Al-Azhar" />
+          <attvalue for="2" value="M Gajan" />
+          <attvalue for="3" value="arabwestreport.info" />
+        </attvalues>
+      </node>
+      <node id="8167826132191765360" label="Islam's Loneliest Cosmopolitan: Badr Al-Din Hai Weiliang, the Lucknow–Cairo Connection, and the Circumscription of Islamic Transnationalism">
+        <attvalues>
+          <attvalue for="0" value="https://www.jstor.org/stable/10.13169/reorient.3.2.0120" />
+          <attvalue for="1" value="Islam's Loneliest Cosmopolitan: Badr Al-Din Hai Weiliang, the Lucknow–Cairo Connection, and the Circumscription of Islamic Transnationalism" />
+          <attvalue for="2" value="J Chen" />
+          <attvalue for="3" value="2018" />
+        </attvalues>
+      </node>
+      <node id="CxSArhPa6REJ" label="6 The frustrating authority of Mr. Wells">
+        <attvalues>
+          <attvalue for="0" value="https://lirias2repo.kuleuven.be/bitstream/id/526879/#page=143" />
+          <attvalue for="1" value="6 The frustrating authority of Mr. Wells" />
+          <attvalue for="2" value="AN Glasserman" />
+          <attvalue for="3" value="The Muslim Reception of European Orientalism" />
+        </attvalues>
+      </node>
+      <node id="1152223864380026508" label="The conundrum of collaboration: Japanese involvement with Muslims in North China, 1931-1945">
+        <attvalues>
+          <attvalue for="0" value="https://repository.library.georgetown.edu/handle/10822/761496" />
+          <attvalue for="1" value="The conundrum of collaboration: Japanese involvement with Muslims in North China, 1931-1945" />
+          <attvalue for="2" value="KA Hammond" />
+          <attvalue for="3" value="2015" />
+        </attvalues>
+      </node>
+      <node id="4959556222819133147" label="Al-Nakbah in Arab thought: The transformation of a concept">
+        <attvalues>
+          <attvalue for="0" value="https://read.dukeupress.edu/cssaame/article-abstract/35/3/622/59951" />
+          <attvalue for="1" value="Al-Nakbah in Arab thought: The transformation of a concept" />
+          <attvalue for="2" value="A Al-Hardan" />
+          <attvalue for="3" value="2015" />
+          <attvalue for="4" value="7" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=4959556222819133147&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="3A-HBrOVQ2MJ" label="Ritualistic Remembrance-Films and TV-series about resistance during World War Two and the construction of Norwegian identity">
+        <attvalues>
+          <attvalue for="0" value="https://www.duo.uio.no/handle/10852/57654" />
+          <attvalue for="1" value="Ritualistic Remembrance-Films and TV-series about resistance during World War Two and the construction of Norwegian identity" />
+          <attvalue for="2" value="HR Markussen" />
+          <attvalue for="3" value="2017" />
+        </attvalues>
+      </node>
+      <node id="11304400861131265660" label="17 The Intellectuals and the Revolution in Syria">
+        <attvalues>
+          <attvalue for="0" value="https://books.google.com/books?hl=en&amp;lr=&amp;id=AgRGDwAAQBAJ&amp;oi=fnd&amp;pg=PA374&amp;ots=QK4PLbt7NN&amp;sig=BxGdrNM9FIVSk4EjGHBbJYiVAm8" />
+          <attvalue for="1" value="17 The Intellectuals and the Revolution in Syria" />
+          <attvalue for="2" value="YH Saleh" />
+          <attvalue for="3" value="2018" />
+        </attvalues>
+      </node>
+      <node id="16933788503292780428" label="Remembering Past (s), Imagining Futures: The Politics of Hope in Palestine">
+        <attvalues>
+          <attvalue for="0" value="https://tspace.library.utoronto.ca/handle/1807/92662" />
+          <attvalue for="1" value="Remembering Past (s), Imagining Futures: The Politics of Hope in Palestine" />
+          <attvalue for="2" value="NT Shaindlinger" />
+          <attvalue for="3" value="2016" />
+        </attvalues>
+      </node>
+      <node id="4UrF7rvf08QJ" label="Speaking Back to a World of Checkpoints: Oral History as a Decolonizing Tool in the Study of Palestinian Refugees from Syria in Lebanon">
+        <attvalues>
+          <attvalue for="0" value="https://lra.le.ac.uk/handle/2381/40429" />
+          <attvalue for="1" value="Speaking Back to a World of Checkpoints: Oral History as a Decolonizing Tool in the Study of Palestinian Refugees from Syria in Lebanon" />
+          <attvalue for="2" value="ME Lundsfryd" />
+          <attvalue for="3" value="2017" />
+        </attvalues>
+      </node>
+      <node id="15718373692146680082" label="Memories for the Return? Remembering the Nakba by the First Generation of Palestinian Refugees in Syria">
+        <attvalues>
+          <attvalue for="0" value="https://www.euppublishing.com/doi/abs/10.3366/hlps.2017.0164" />
+          <attvalue for="1" value="Memories for the Return? Remembering the Nakba by the First Generation of Palestinian Refugees in Syria" />
+          <attvalue for="2" value="A Al-Hardan" />
+          <attvalue for="3" value="2017" />
+        </attvalues>
+      </node>
+      <node id="BHx2oo7nzCgJ" label="LUCAS DE JESUS SANTOS">
+        <attvalues>
+          <attvalue for="0" value="http://taurus.unicamp.br/bitstream/REPOSIP/321597/1/Santos_LucasdeJesus_M.pdf" />
+          <attvalue for="1" value="LUCAS DE JESUS SANTOS" />
+          <attvalue for="2" value="EW SAID" />
+          <attvalue for="3" value="taurus.unicamp.br" />
+        </attvalues>
+      </node>
+      <node id="a3jspkYW68EJ" label="Retorno à filologia e humanismo em Edward W. Said">
+        <attvalues>
+          <attvalue for="0" value="http://repositorio.unicamp.br/handle/REPOSIP/321597" />
+          <attvalue for="1" value="Retorno à filologia e humanismo em Edward W. Said" />
+          <attvalue for="2" value="LJ Santos" />
+          <attvalue for="3" value="2016" />
+        </attvalues>
+      </node>
+      <node id="17565536014075811145" label="A political history of national liberation movement in Asia and Africa, 1914-1985">
+        <attvalues>
+          <attvalue for="1" value="A political history of national liberation movement in Asia and Africa, 1914-1985" />
+          <attvalue for="2" value="A Balogh, Z Imam" />
+          <attvalue for="3" value="1988" />
+          <attvalue for="4" value="4" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=17565536014075811145&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="6559324546197513541" label="Making development geography">
+        <attvalues>
+          <attvalue for="0" value="https://www.taylorfrancis.com/books/9781444116731" />
+          <attvalue for="1" value="Making development geography" />
+          <attvalue for="2" value="V Lawson" />
+          <attvalue for="3" value="2014" />
+          <attvalue for="4" value="145" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=6559324546197513541&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="10718160787550692095" label="Concepts of Cabralism: Amilcar Cabral and Africana Critical Theory">
+        <attvalues>
+          <attvalue for="0" value="https://books.google.com/books?hl=en&amp;lr=&amp;id=EgsWBAAAQBAJ&amp;oi=fnd&amp;pg=PR7&amp;ots=1EEo_G9B1H&amp;sig=cYyw5jwjX5NR5aP0XOtIIAuKeY8" />
+          <attvalue for="1" value="Concepts of Cabralism: Amilcar Cabral and Africana Critical Theory" />
+          <attvalue for="2" value="R Rabaka" />
+          <attvalue for="3" value="2014" />
+          <attvalue for="4" value="19" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=10718160787550692095&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="cET-rzn_rTwJ" label="The geopolitics of cultural difference: Locating the spatial poetics of Ezra Pound, HD, and Langston Hughes">
+        <attvalues>
+          <attvalue for="0" value="http://search.proquest.com/openview/2fc34ae8e60a4d2dc0601fe8fc7f102b/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" />
+          <attvalue for="1" value="The geopolitics of cultural difference: Locating the spatial poetics of Ezra Pound, HD, and Langston Hughes" />
+          <attvalue for="2" value="R Walsh" />
+          <attvalue for="3" value="2004" />
+        </attvalues>
+      </node>
+      <node id="ifky70iqBjIJ" label="[CITATION][C]">
+        <attvalues>
+          <attvalue for="1" value="[CITATION][C]" />
+          <attvalue for="2" value="K DAS" />
+          <attvalue for="3" value="1931" />
+        </attvalues>
+      </node>
+      <node id="5297561570786145029" label="Rewolucja pod piramidami">
+        <attvalues>
+          <attvalue for="1" value="Rewolucja pod piramidami" />
+          <attvalue for="2" value="K Sidor" />
+          <attvalue for="3" value="1969" />
+          <attvalue for="4" value="6" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=5297561570786145029&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="8814202659813705392" label="[CITATION][C]">
+        <attvalues>
+          <attvalue for="1" value="[CITATION][C]" />
+          <attvalue for="2" value="J Zdanowski" />
+          <attvalue for="3" value="1986" />
+          <attvalue for="4" value="30" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=8814202659813705392&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="16045244155787947158" label="[CITATION][C]">
+        <attvalues>
+          <attvalue for="1" value="[CITATION][C]" />
+          <attvalue for="2" value="E Wójcik" />
+          <attvalue for="3" value="1975" />
+          <attvalue for="4" value="9" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=16045244155787947158&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="15625078019098713347" label="[CITATION][C]">
+        <attvalues>
+          <attvalue for="1" value="[CITATION][C]" />
+          <attvalue for="2" value="HA Jamsheer" />
+          <attvalue for="3" value="1987" />
+          <attvalue for="4" value="8" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=15625078019098713347&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="4329802764567512323" label="Political Cleavages in Jordan: In the Light of the General Election Held in 1956">
+        <attvalues>
+          <attvalue for="0" value="http://cejsh.icm.edu.pl/cejsh/element/bwmeta1.element.desklight-8961d413-93bf-49c2-ada2-783d34c7510c/c/Bartosz_Wroblewski_-_ang.pdf" />
+          <attvalue for="1" value="Political Cleavages in Jordan: In the Light of the General Election Held in 1956" />
+          <attvalue for="2" value="B Wróblewski" />
+          <attvalue for="3" value="2008" />
+          <attvalue for="4" value="2" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=4329802764567512323&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="35307202442654876" label="FUNDAMENTALIZM MUZUŁMAŃSKI NA PRZYKŁADZIE DZIAŁALNOŚCI BRACI MUZUŁMANÓW W EGIPCIE I JORDANII">
+        <attvalues>
+          <attvalue for="0" value="https://www.ceeol.com/search/article-detail?id=414118" />
+          <attvalue for="1" value="FUNDAMENTALIZM MUZUŁMAŃSKI NA PRZYKŁADZIE DZIAŁALNOŚCI BRACI MUZUŁMANÓW W EGIPCIE I JORDANII" />
+          <attvalue for="2" value="B Wróblewski" />
+          <attvalue for="3" value="2009" />
+          <attvalue for="4" value="1" />
+          <attvalue for="5" value="https://scholar.google.com/scholar?cites=35307202442654876&amp;as_sdt=20000005&amp;sciodt=0,21&amp;hl=en&amp;scioq=Falsafat+Al-Thawrah" />
+        </attvalues>
+      </node>
+      <node id="15881603866752996761" label="Z BADAŃ NAD PODZIAŁAMI POLITYCZNYMI W JORDANII W ŚWIETLE WYBORÓW POWSZECHNYCH W ROKU 1956">
+        <attvalues>
+          <attvalue for="0" value="https://www.ceeol.com/search/article-detail?id=417291" />
+          <attvalue for="1" value="Z BADAŃ NAD PODZIAŁAMI POLITYCZNYMI W JORDANII W ŚWIETLE WYBORÓW POWSZECHNYCH W ROKU 1956" />
+          <attvalue for="2" value="B Wróblewski" />
+          <attvalue for="3" value="2008" />
+        </attvalues>
+      </node>
+      <node id="Wv_ivpFW1LoJ" label="[CITATION][C]">
+        <attvalues>
+          <attvalue for="1" value="[CITATION][C]" />
+          <attvalue for="2" value="C Panella" />
+          <attvalue for="3" value="2003" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="0" source="4201475383961567421" target="18384710366382244445" />
+      <edge id="1" source="2681096123505496750" target="4201475383961567421" />
+      <edge id="2" source="2542091724148204021" target="4201475383961567421" />
+      <edge id="3" source="2584397646818281716" target="4201475383961567421" />
+      <edge id="4" source="2bTlJuDkNq0J" target="4201475383961567421" />
+      <edge id="5" source="VZcXa_7tQ4UJ" target="4201475383961567421" />
+      <edge id="6" source="2VOAmdJ8ankJ" target="4201475383961567421" />
+      <edge id="7" source="8167826132191765360" target="4201475383961567421" />
+      <edge id="8" source="CxSArhPa6REJ" target="4201475383961567421" />
+      <edge id="9" source="1152223864380026508" target="4201475383961567421" />
+      <edge id="10" source="4959556222819133147" target="18384710366382244445" />
+      <edge id="11" source="3A-HBrOVQ2MJ" target="4959556222819133147" />
+      <edge id="12" source="11304400861131265660" target="4959556222819133147" />
+      <edge id="13" source="16933788503292780428" target="4959556222819133147" />
+      <edge id="14" source="4UrF7rvf08QJ" target="4959556222819133147" />
+      <edge id="15" source="15718373692146680082" target="4959556222819133147" />
+      <edge id="16" source="BHx2oo7nzCgJ" target="4959556222819133147" />
+      <edge id="17" source="a3jspkYW68EJ" target="4959556222819133147" />
+      <edge id="18" source="17565536014075811145" target="18384710366382244445" />
+      <edge id="19" source="6559324546197513541" target="17565536014075811145" />
+      <edge id="20" source="10718160787550692095" target="17565536014075811145" />
+      <edge id="21" source="cET-rzn_rTwJ" target="17565536014075811145" />
+      <edge id="22" source="ifky70iqBjIJ" target="17565536014075811145" />
+      <edge id="23" source="5297561570786145029" target="18384710366382244445" />
+      <edge id="24" source="8814202659813705392" target="5297561570786145029" />
+      <edge id="25" source="16045244155787947158" target="5297561570786145029" />
+      <edge id="26" source="15625078019098713347" target="5297561570786145029" />
+      <edge id="27" source="4329802764567512323" target="5297561570786145029" />
+      <edge id="28" source="35307202442654876" target="5297561570786145029" />
+      <edge id="29" source="15881603866752996761" target="5297561570786145029" />
+      <edge id="30" source="Wv_ivpFW1LoJ" target="18384710366382244445" />
+    </edges>
+  </graph>
+</gexf>
